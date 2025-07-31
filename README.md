@@ -1,16 +1,16 @@
 # LLM Sentiment Correlation Analysis - STANDALONE
 
-This is a **completely standalone** sentiment analysis and correlation system as requested by the professor. It has **NO dependencies** on the main Cryptex project.
+This is a **completely standalone** sentiment analysis and correlation system. It has **NO dependencies** on the main Cryptex project.
 
-## 🎯 Purpose
+## Purpose
 
-Analyze the correlation between LLM-generated sentiment scores and model prediction accuracy, exactly as requested:
+Analyze the correlation between LLM-generated sentiment scores and model prediction accuracy:
 1. **Raw Text** → 2. **LLM Analysis** → 3. **Correlation Study**
 
-## 📁 Files
+## Files
 
 ### Core Scripts
-- `export_raw_sentiment_simple.py` - Export raw sentiment data (Jan 1-31, 2024)
+- `export_raw_sentiment_simple.py` - Export raw sentiment data (Jan 1-31, 2025)
 - `llm_sentiment_analyzer_actual.py` - Use actual LLMs for sentiment analysis
 - `llm_sentiment_correlation.py` - Correlation analysis and visualization
 
@@ -27,7 +27,7 @@ Analyze the correlation between LLM-generated sentiment scores and model predict
 - TimeLLM models
 - Project-specific utilities
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Step 1: Export Raw Sentiment Data
 ```bash
@@ -58,11 +58,11 @@ python llm_sentiment_analyzer_actual.py \
 ### Step 3: Run Correlation Analysis
 ```bash
 python llm_sentiment_correlation.py \
-    --llm-sentiment-file raw_sentiment_data/raw_sentiment_sample_50records_deepseek_analyzed.csv \
-    --use-mock-predictions
+    --sentiment-file raw_sentiment_data/raw_sentiment_sample_50records_deepseek_analyzed.csv \
+    --prediction-file your_prediction_data.csv
 ```
 
-## 🧠 Available LLMs
+## Available LLMs
 
 - **DEEPSEEK** - `deepseek-ai/DeepSeek-R1-Distill-Llama-8B`
 - **LLAMA3.1** - `meta-llama/Llama-3.1-8B-Instruct`
@@ -71,7 +71,7 @@ python llm_sentiment_correlation.py \
 - **GEMMA** - `google/gemma-2-2b-it`
 - **LLAMA** - `huggyllama/llama-7b`
 
-## 📊 Output
+## Output
 
 The system generates:
 1. **Raw sentiment CSV** - Timestamps + raw text
@@ -80,13 +80,13 @@ The system generates:
 4. **Statistical report** - Correlation coefficients, significance tests
 5. **Professor's key result** - Main correlation value
 
-## 🎯 Key Features
+## Key Features
 
 ### Raw Sentiment Export
 - **Unix timestamps** (matching project format)
 - **Raw text** (no pre-processing)
 - **2+ articles per source per day** minimum
-- **Jan 1-31, 2024** date range
+- **Jan 1-31, 2025** date range
 - Sources: Reddit + News (configurable)
 
 ### LLM Analysis
@@ -99,9 +99,8 @@ The system generates:
 - **Pearson & Spearman** correlations
 - **Statistical significance** testing
 - **Time-series alignment** between sentiment and predictions
-- **Mock prediction data** for testing (optional)
 
-## 🔧 Configuration
+## Configuration
 
 ### Optional NewsAPI Key
 Create `config.json`:
@@ -124,22 +123,21 @@ Create `config.json`:
 --device DEVICE            # auto, cpu, cuda, mps
 
 # Correlation options
---use-mock-predictions     # Use simulated prediction data
---prediction-file FILE     # Real prediction CSV file
+--prediction-file FILE     # Prediction CSV file (required)
 ```
 
-## 📈 Expected Results
+## Expected Results
 
-**Professor's Key Metric:**
+**Key Metric:**
 ```
 LLM Sentiment vs Prediction Accuracy: r = 0.XXX
 Statistical significance: YES/NO
 P-value: 0.XXX
 ```
 
-The system will show whether LLM-generated sentiment scores correlate with model prediction accuracy, exactly as requested for the academic analysis.
+The system will show whether LLM-generated sentiment scores correlate with model prediction accuracy for academic analysis.
 
-## 🎓 Academic Usage
+## Academic Usage
 
 This standalone system is designed for:
 - **Research papers** - Cite correlation results
@@ -147,4 +145,4 @@ This standalone system is designed for:
 - **Statistical analysis** - Export detailed correlation data
 - **Model comparison** - Test different LLMs (DEEPSEEK vs LLAMA3.1, etc.)
 
-Perfect for the professor's requirements with zero dependencies on the main project!
+Perfect for academic research with zero dependencies on the main project!
