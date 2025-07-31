@@ -397,10 +397,10 @@ class BitcoinSentimentAnalyzer:
                 axes[0,0].plot(x_trend, p(x_trend), "r--", alpha=0.8)
         
         # 2. Time series
-        axes[0,1].plot(aligned_df['datetime_btc'], aligned_df['avg_sentiment'], 'g-', 
+        axes[0,1].plot(aligned_df['datetime'], aligned_df['avg_sentiment'], 'g-', 
                        alpha=0.7, label='Sentiment', linewidth=2)
         ax2 = axes[0,1].twinx()
-        ax2.plot(aligned_df['datetime_btc'], aligned_df['close'], 'b-', 
+        ax2.plot(aligned_df['datetime'], aligned_df['close'], 'b-', 
                  alpha=0.7, label='Bitcoin Price', linewidth=2)
         
         axes[0,1].set_xlabel('Date')
@@ -443,7 +443,7 @@ class BitcoinSentimentAnalyzer:
             "=" * 60,
             f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
             f"Bitcoin data records: {len(aligned_df)}",
-            f"Date range: {aligned_df['datetime_btc'].min()} to {aligned_df['datetime_btc'].max()}",
+            f"Date range: {aligned_df['datetime'].min()} to {aligned_df['datetime'].max()}",
             f"Average sentiment: {aligned_df['avg_sentiment'].mean():.3f}",
             f"Bitcoin price range: ${aligned_df['close'].min():,.2f} - ${aligned_df['close'].max():,.2f}",
             "",
